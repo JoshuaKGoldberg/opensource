@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import { GamutProvider, theme } from "@codecademy/gamut-styles";
 
 import type { AppProps } from "next/app";
