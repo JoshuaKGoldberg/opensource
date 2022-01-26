@@ -1,7 +1,25 @@
-import { Box } from "@codecademy/gamut";
+import { ContentContainer, FlexBox, Text } from "@codecademy/gamut";
 import { GlobalHeaderProps, GlobalPage } from "@codecademy/gamut-labs";
+import { Background, BackgroundProps, ColorMode } from "@codecademy/gamut-styles";
 import type { NextPage } from "next";
 import Head from "next/head";
+
+interface SectionProps {
+  bg: BackgroundProps["bg"];
+  children: React.ReactNode;
+}
+
+const Section = ({ children, bg }: SectionProps) => {
+  return (
+    <Background bg={bg}>
+      <ContentContainer>
+        <FlexBox center flexDirection={{ _: "column", md: "row" }} minHeight="35vh" py={48}>
+          {children}
+        </FlexBox>
+      </ContentContainer>
+    </Background>
+  );
+};
 
 const Home: NextPage = () => {
   const footer = {
@@ -26,8 +44,42 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalPage footer={footer} header={header}>
-        hello world!
-        <Box bg="pink-400">yo</Box>
+        <ColorMode mode="light">
+          <Section bg="paleBlue">
+            <Text as="h1" textAlign="center">
+              Open Source at Codecademy
+            </Text>
+          </Section>
+          <Section bg="navy-900">
+            <Text as="h2" display={{ _: "initial", md: "flex" }} fontSize={34}>
+              We love open source at Codecademy.
+            </Text>
+            <Text
+              fontSize={20}
+              pl={{ _: 0, md: 16 }}
+              pt={{ _: 48, md: 0 }}
+              textAlign={{ _: "justify", md: "left" }}
+            >
+              As a startup that needed to ramp up and scale quickly, Codecademy embraced open source
+              software to do achieve its mission of accessible technical education and upskilling
+              resources for the world.
+              <br />
+              <br />
+              Now that we have millions of learners, our engineering team actively gives back to the
+              open source world. 
+              We want to be good citizens and we care about the state of the global software community.
+            </Text>
+          </Section>
+          <Section bg="paleYellow">
+            <Text textAlign="center">Codecademy org / released open source projects</Text>
+          </Section>
+          <Section bg="navy-800">
+            <Text textAlign="center">open source sponsorships</Text>
+          </Section>
+          <Section bg="paleGreen">
+            <Text textAlign="center">source projects we use</Text>
+          </Section>
+        </ColorMode>
       </GlobalPage>
     </>
   );
