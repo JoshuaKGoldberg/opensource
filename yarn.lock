@@ -1045,7 +1045,7 @@ emojis-list@^2.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
-emojisplosion@^2.6.0:
+emojisplosion@^2.6.0, emojisplosion@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/emojisplosion/-/emojisplosion-2.6.1.tgz#1e00c316f06469489cb34fe65746d7c91ed48196"
   integrity sha512-a+yvHzHHP9R8qvt7ZeZS8yReuHjwXvbBbSxJHVMMWs4+sf0eOE/v/+Iz6fQq0CdF8G04jsJMF1MNDlrIBCC1pw==
@@ -1872,6 +1872,14 @@ konami-code-js@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/konami-code-js/-/konami-code-js-0.8.1.tgz#b970ee1aaa7e4136b484d36a2c4e528414feb4de"
   integrity sha512-bJ0tuWYLYiUueIVTpA0MV4h4Gz1X16uuJggh5TpIWXOQoLv0238SU7Im23z2wYKCCBsOfk5j4HKWB/pqdCgu5Q==
+
+konamimojisplosion@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/konamimojisplosion/-/konamimojisplosion-0.5.1.tgz#610108e3d36bf83d9d26a2e0f3f180491b8023af"
+  integrity sha512-eT8nElztw28D/xlirsm50NxBYt1LgHQg8qaTJ3S2c363YmhesGKSptckEJS2yQpwQsAPe0QpJxUp/z1gnWXl0A==
+  dependencies:
+    emojisplosion "^2.6.1"
+    konami-code-js "^0.8.1"
 
 language-subtag-registry@~0.3.2:
   version "0.3.21"

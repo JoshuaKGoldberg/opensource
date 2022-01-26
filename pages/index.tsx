@@ -1,8 +1,10 @@
-import { ContentContainer, FlexBox, Text } from "@codecademy/gamut";
+import { useKonamimojisplosion } from "konamimojisplosion";
+import { Anchor, ContentContainer, FlexBox, List, Text } from "@codecademy/gamut";
 import { GlobalHeaderProps, GlobalPage } from "@codecademy/gamut-labs";
 import { Background, BackgroundProps, ColorMode } from "@codecademy/gamut-styles";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { BookFlipPageIcon } from "@codecademy/gamut-icons";
 
 interface SectionProps {
   bg: BackgroundProps["bg"];
@@ -36,6 +38,8 @@ const Home: NextPage = () => {
     type: "loading",
   };
 
+  useKonamimojisplosion();
+
   return (
     <>
       <Head>
@@ -61,17 +65,74 @@ const Home: NextPage = () => {
               textAlign={{ _: "justify", md: "left" }}
             >
               As a startup that needed to ramp up and scale quickly, Codecademy embraced open source
-              software to do achieve its mission of accessible technical education and upskilling
+              software to achieve its mission of accessible technical education and upskilling
               resources for the world.
               <br />
               <br />
               Now that we have millions of learners, our engineering team actively gives back to the
-              open source world. 
-              We want to be good citizens and we care about the state of the global software community.
+              open source world. We want to be good citizens and we care about the state of the
+              global software community.
             </Text>
           </Section>
           <Section bg="paleYellow">
-            <Text textAlign="center">Codecademy org / released open source projects</Text>
+            <Text as="h2" display={{ _: "initial", md: "flex" }} fontSize={34}>
+              Come code with us!
+            </Text>
+            <Text
+              fontSize={20}
+              pl={{ _: 0, md: 16 }}
+              pt={{ _: 16, md: 0 }}
+              pb={{ _: 32, md: 0 }}
+              textAlign={{ _: "justify", md: "left" }}
+            >
+              These are some of our open source projects.
+            </Text>
+            {/* TODO GridBox */}
+            <FlexBox as="li" flexDirection="row" gap={16} mb={32}>
+              <BookFlipPageIcon size={64} />
+              <FlexBox flexDirection="column">
+                <Text as="h3" mb={8}>
+                  Docs
+                </Text>
+                <Text>
+                  Docs is a community-driven collection of code documentation for popular
+                  programming languages and frameworks. Open source documentation by Codecademy
+                  learners for Codecademy learners.
+                  <Anchor display="block" href="https://github.com/Codecademy/docs" mt={8}>
+                    github.com/Codecademy/docs
+                  </Anchor>
+                </Text>
+              </FlexBox>
+            </FlexBox>
+            <FlexBox flexDirection="row-reverse" gap={16} mb={32} textAlign="right">
+              <BookFlipPageIcon size={64} />
+              <FlexBox flexDirection="column">
+                <Text as="h3">Gamut</Text>
+                <Text>
+                  Codecademy&apos;s open source design system, component library, and CSS-in-JS
+                  utilities. Built on Emotion, React, and TypeScript. It&apos;s used across all of
+                  our websites -- including this one.
+                </Text>
+                <Anchor display="block" href="https://github.com/Codecademy/docs" mt={8}>
+                  github.com/Codecademy/docs
+                </Anchor>
+              </FlexBox>
+            </FlexBox>
+            <FlexBox flexDirection="row" gap={16} mb={32}>
+              <BookFlipPageIcon size={64} />
+              <FlexBox flexDirection="column">
+                <Text as="h3">40Phaser</Text>
+                <Text>something something docs very good will soon ask audience about docs</Text>
+              </FlexBox>
+            </FlexBox>
+            <FlexBox flexDirection="row-reverse" gap={16} mb={32} textAlign="right">
+              <BookFlipPageIcon size={64} />
+              <FlexBox flexDirection="column">
+                <Text as="h3">Konamimojisplosion</Text>
+                <Text>something something docs very good will soon ask audience about docs</Text>
+              </FlexBox>
+            </FlexBox>
+            {/* todo soon: client-modules (once codebytes and monaco are filled out ) */}
           </Section>
           <Section bg="navy-800">
             <Text textAlign="center">open source sponsorships</Text>

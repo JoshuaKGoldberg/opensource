@@ -4,6 +4,7 @@
     "@codecademy/konamimojisplosion": "^0.3.2",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "konamimojisplosion": "^0.5.1",
     "next": "12.0.8",
     "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
